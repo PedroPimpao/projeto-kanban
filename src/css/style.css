@@ -1,5 +1,27 @@
 :root{
-    --fontFamily: "Poppins", sans-serif;
+    --fontFamily: "Poppins", serif;
+
+    /* Colors */
+    --bodyBackground: #FFF;
+    --columnBackground: #f4f5f7;
+    --cardBackground: #fafafa;
+    --titleColor: #182b4d;
+    --leterColor: #000;
+    --spanColor: #6b778c;
+    --cardContentColor: #4d5c76;
+    --scrollThumb: #29293588;
+    --toggle: #303030;
+}
+.dark:root{
+    --bodyBackground: #202020;
+    --columnBackground: #303030;
+    --cardBackground: #383838;
+    --titleColor: #fafafa;
+    --leterColor: #FFF;
+    --spanColor: #fafafa;
+    --cardContentColor: #e7e7e7;
+    --scrollThumb: #c0c0c0;
+    --toggle: #f4f5f7;
 }
 
 *{
@@ -8,3 +30,65 @@
     box-sizing: border-box;
     font-family: var(--fontFamily);
 }
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--bodyBackground);
+}
+
+.main-container{
+    height: 100vh;
+    width: 100%;
+    padding: 30px;
+    user-select: none;
+}
+
+/* Toggle Theme Button Style */
+
+.themeToggle{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.toggleInput{
+    appearance: none;
+    background-color: var(--columnBackground);
+    width: 50px;
+    height: 25px;
+    border-radius: 25px;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.397);
+    position: relative;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.toggleInput:checked{
+    background-color: #00eeff;
+}
+
+.toggleInput::before{
+    content: '';
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: var(--toggle);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(0.7);
+    transition: .5s;
+}
+
+.toggleInput:checked::before{
+    top: 0;
+    left: 50%;
+    transition: .5s;
+}
+
+/* /Toggle Theme Button Style */
