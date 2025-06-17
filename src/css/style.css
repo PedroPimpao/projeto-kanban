@@ -29,6 +29,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: var(--fontFamily);
+    transition: .5s;
 }
 
 body{
@@ -88,6 +89,10 @@ i{
     flex-direction: row;
     align-items: center;
     gap: 10px;
+}
+
+.themeToggle label{
+    color: var(--leterColor);
 }
 
 .toggleInput{
@@ -192,6 +197,10 @@ i{
     flex-direction: row;
     font-size: 1.3rem;
     gap: 10px;
+}
+
+.column-header .column-control i{
+    color: var(--leterColor);
 }
 
 .card-counter{
