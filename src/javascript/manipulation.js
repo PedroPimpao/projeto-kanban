@@ -97,6 +97,7 @@ removeCardButton.forEach((item)=>{
 // Manipulação de Colunas
 const createColumnButton=document.querySelector('.plusColumn')
 const removeColumnButton=document.querySelectorAll('.remove')
+const columnTitle=document.querySelectorAll('.column-title')
 
 const newColumn=()=>{
     const column = document.createElement('div')
@@ -160,6 +161,8 @@ const newColumn=()=>{
 
     removeButton.addEventListener('click', removeColumn)
     removeButton.addEventListener('click', updateColumnCounter)
+
+    columnTitle.addEventListener('dblclick', editColumnTitle)
     
     cardContainer.append(newCard())
 
@@ -180,10 +183,22 @@ const removeColumn=({target})=>{
     column.remove()
 }
 
+const editColumnTitle=({target})=>{
+    target.contentEditable='true'
+    target.focus()
+    target.addEventListener('focusout', ()=>{
+        target.contentEditable='false'
+    })
+}
+
 createColumnButton.addEventListener('click', createColumn)
 createColumnButton.addEventListener('click', updateColumnCounter)
 
 removeColumnButton.forEach((item)=>{
     item.addEventListener('click', removeColumn)
     item.addEventListener('click', updateColumnCounter)
+})
+
+columnTitle.forEach((title)=>{
+    title.addEventListener('dblclick', editColumnTitle)
 })
