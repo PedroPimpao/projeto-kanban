@@ -143,6 +143,8 @@ i{
     align-items: center;
     gap: 15px;
     overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
 }
 
 .columns-container::-webkit-scrollbar{

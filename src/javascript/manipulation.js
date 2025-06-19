@@ -1,4 +1,5 @@
 import { updateCardCounter, updateColumnCounter } from "./counters.js"
+import { options } from "./dragDrop.js"
 
 // Manipulação de Cards
 const removeCardButton=document.querySelectorAll('.remove-card')
@@ -165,6 +166,9 @@ const newColumn=()=>{
     columnTitle.addEventListener('dblclick', editColumnTitle)
     
     cardContainer.append(newCard())
+
+    new Sortable(cardContainer, options)
+    cardContainer.addEventListener('change', updateCardCounter)
 
     return column
 }
