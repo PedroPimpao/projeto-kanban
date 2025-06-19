@@ -293,6 +293,21 @@ i{
 }
 
 .card-highlighted{
-    box-shadow: 0px 0px 15px rgba(255, 115, 0, 0.76);
+    border: 2px solid rgba(230, 52, 52, 0.932);
 }
 /* /Card Container */
+
+
+/* Drag and Drop Mobile */
+
+.draggingMobile{
+    display: flex;
+    gap: 15px;
+}
+
+.draggingMobile > .column{
+    height: 40vh;
+    overflow: hidden;
+}
+
+/* /Drag and Drop Mobile */
