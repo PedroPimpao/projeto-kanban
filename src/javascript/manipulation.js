@@ -1,5 +1,6 @@
 import { updateCardCounter, updateColumnCounter } from "./counters.js"
 import { options } from "./dragDrop.js"
+import { dragMobile, dragMobileEnd } from "./dragDrop.js"
 
 // Manipulação de Cards
 const removeCardButton=document.querySelectorAll('.remove-card')
@@ -42,6 +43,9 @@ const newCard=()=>{
     editCardButton.addEventListener('click', editCard)
     removeCardButton.addEventListener('click', removeCard)
     removeCardButton.addEventListener('click', updateCardCounter)
+
+    card.addEventListener('dragstart', dragMobile)
+    card.addEventListener('dragend', dragMobileEnd)
 
     return card
 }

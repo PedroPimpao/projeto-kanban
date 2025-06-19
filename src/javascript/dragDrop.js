@@ -15,31 +15,35 @@ cardContainer.forEach((container)=>{
     container.addEventListener('change', updateCardCounter)
 })
 
-const body=document.getElementsByTagName('body')[0]
-const columnsContainer=document.querySelector('.columns-container')
 const cards=document.querySelectorAll('.card')
 
-
-
-const dragMobile=()=>{
+export const dragMobile=()=>{
+    const columns=document.querySelectorAll('.column')
     if(window.innerWidth <= 600){
-        columnsContainer.classList.add('draggingMobile')
+        columns.forEach((column)=>{
+            column.classList.add('draggingMobile')
+        })
     }else{
-        columnsContainer.classList.remove('draggingMobile')
+        columns.forEach((column)=>{
+            column.classList.remove('draggingMobile')
+        })
     }
+}
 
+export const dragMobileEnd=()=>{
+    const columns=document.querySelectorAll('.column')
+    columns.forEach((column)=>{
+        column.classList.remove('draggingMobile')
+    })
 }
 
 cards.forEach((card)=>{
     card.addEventListener('dragstart', dragMobile)
 })
+
 cards.forEach((card)=>{
-    card.addEventListener('dragend', ()=>{
-        columnsContainer.classList.remove('draggingMobile')
-        // updateCardCounter()
-    })
+    card.addEventListener('dragend', dragMobileEnd)
 })
-// window.addEventListener('resize', dragMobile)
 
                         
                         

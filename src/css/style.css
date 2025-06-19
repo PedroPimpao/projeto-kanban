@@ -301,11 +301,6 @@ i{
 /* Drag and Drop Mobile */
 
 .draggingMobile{
-    display: flex;
-    gap: 15px;
-}
-
-.draggingMobile > .column{
     height: 40vh;
     overflow: hidden;
 }
