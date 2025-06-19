@@ -5,8 +5,9 @@ export const options = {
     animation: 150,
     scroll: true,
     scrollSensitivity: 120,
-    scrollSpeed: 8,
-    touchStartThreshold: 10
+    scrollSpeed: 12,
+    touchStartThreshold: 10,
+    onEnd: updateCardCounter
 }
 
 const cardContainer=document.querySelectorAll('.card-container')
