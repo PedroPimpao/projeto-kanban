@@ -44,18 +44,4 @@ cards.forEach((card)=>{
 
 cards.forEach((card)=>{
     card.addEventListener('dragend', dragMobileEnd)
-})
-
-                        
-                        
-
-                        
-                            
-                                
-                            
-                            
-                                
-                            
-                        
-
-                    
+})         
